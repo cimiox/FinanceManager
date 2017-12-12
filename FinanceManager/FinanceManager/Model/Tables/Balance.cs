@@ -1,22 +1,20 @@
-﻿
-using SQLite;
-using System;
+﻿using System;
 
 namespace FinanceManager.Model.Tables
 {
-    [Table("Balance")]
     public class Balance
     {
-        [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
-
-        [NotNull]
         public double Count { get; set; }
+        public Currencies Currency { get; set; }
+        public Category Category { get; set; }
+        public History History { get; set; }
 
-        [Indexed, NotNull]
-        public int CategoryID { get; set; }
-
-        [Indexed, NotNull]
-        public int HistoryID { get; set; }
+        public Balance(double count, Currencies currency, Category category)
+        {
+            Count = count;
+            Currency = currency;
+            Category = category;
+            History = new History(DateTime.Now);
+        }
     }
 }

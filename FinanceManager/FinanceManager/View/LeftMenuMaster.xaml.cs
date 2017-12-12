@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace FinanceManager
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace FinanceManager.View
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LeftMenuMaster : ContentPage
     {
-        public MainPage()
+        public LeftMenuMaster()
         {
             InitializeComponent();
         }

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceManager.View.LeftMenuDetail"
+             Title="Detail">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="strongbox.png" Order="Primary" Priority="0"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+        <Label Text="{Binding LastBalance, StringFormat='{0}$'}" FontSize="Large" HorizontalOptions="Center"/>
+
+        <ListView ItemsSource="{Binding Balances}" SelectedItem="{Binding BalanceForEdit, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Category.Name, StringFormat='{0}: '}" Detail="{Binding Count}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Command="{Binding MinusPage}" Text="Minus" HorizontalOptions="Start"/>
+            <Button Command="{Binding PlusPage}" Text="Plus" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

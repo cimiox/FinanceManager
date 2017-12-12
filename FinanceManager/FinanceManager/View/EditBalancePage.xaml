@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceManager.View.EditBalancePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry  Keyboard="Numeric" Text="{Binding Balance, Mode=TwoWay}"/>
+            <Picker Title="Currency" ItemsSource="{Binding Currencies}" SelectedItem="{Binding Currency, Mode=TwoWay}"/>
+            <Picker Title="Choose category" ItemsSource="{Binding Categories}" SelectedItem="{Binding BalanceCategory, Mode=TwoWay}" ItemDisplayBinding="{Binding Name}"/>
+            <Button Command="{Binding AddBalanceCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

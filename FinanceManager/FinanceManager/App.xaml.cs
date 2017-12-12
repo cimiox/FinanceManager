@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FinanceManager.View;
+using FinanceManager.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +15,7 @@ namespace FinanceManager
         {
             InitializeComponent();
 
-            MainPage = new FinanceManager.MainPage();
+            MainPage = new LeftMenu();
         }
 
         protected override void OnStart()
